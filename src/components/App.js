@@ -9,10 +9,10 @@ console.log(blogData);
 function App() {
   return (
     <div className="App">
-     <Header name="Blog App" />
+     <Header name={blogData.name} />
      <About 
-      image="https://via.placeholder.com/215"
-      about="My Blog App"
+      image={blogData.image}
+      about={blogData.about}
      />
      <ArticleList posts={blogData.posts} />
     </div>
