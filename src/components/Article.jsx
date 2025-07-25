@@ -1,13 +1,26 @@
-import React from 'react'
+import React from "react";
 
-const Article = ({title, date="January 1, 1970", preview}) => {
+function Article({ title, date = "January 1, 1970", preview, minutes }) {
+  const getEmojiRating = (min) => {
+    let emoji = "";
+    if (min < 30) {
+      const cups = Math.ceil(min / 5);
+      emoji = "☕️".repeat(cups);
+    } else {
+      const boxes = Math.ceil(min / 10);
+      emoji = "🍱".repeat(boxes);
+    }
+    return `${emoji} ${min} min read`;
+  };
+
   return (
     <article>
-        <h3>{title}</h3>
-        <small>{date}</small>
-        <p>{preview}</p>
+      <h3>{title}</h3>
+      <small>{date} • {getEmojiRating(minutes)}</small>
+      <p>{preview}</p>
     </article>
-  )
+  );
 }
 
-export default Article
+export default Article;
+
