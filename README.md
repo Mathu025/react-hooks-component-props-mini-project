@@ -1,6 +1,6 @@
 # Putting it All Together: Components and Props
 
-## Learning Goals
+### Learning Goals
 
 - Create components that return JSX
 - Use props to make components dynamic
